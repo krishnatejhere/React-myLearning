@@ -1,0 +1,16 @@
+/* Updated layout for content */
+.content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  gap: 20px; /* Space between cards */
+  justify-content: center; /* Center the grid content */
+  padding: 20px; /* Optional padding around the grid */
+}
+
+@media (max-width: 1352px) {
+  .content {
+      grid-template-columns: 1fr; /* Single column for smaller screens */
+  }
+}
+
+

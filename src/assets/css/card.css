@@ -1,0 +1,496 @@
+/* Card Container */
+.card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: max(65%, 600px);
+    height: 160px;
+    background-color: #757575;
+    color: #d3d3d3;
+    font-family: 'magic';
+    font-size: 1.2rem;
+    letter-spacing: 4px;
+    padding: 12px;
+    margin: 16px auto;
+    border-radius: 8px;
+    transition: all 0.6s ease;
+}
+
+.default-card{
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: max(65%, 600px);
+    
+}
+
+.card.expanded {
+    margin-bottom: 24px;
+    flex-direction: column;
+    height: 95%;
+    background-color: #66616c;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    gap: 16px;
+}
+
+/* Card details */
+.details {
+    flex: 7;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.details label {
+    font-size: 1.4rem; /* Increased font size for details */
+}
+
+/* Buttons and other styles remain the same */
+.buttons {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    align-items: center;
+    justify-content: center;
+}
+
+#logo {
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(66, 66, 66);
+    padding: 12px;
+    width: 72px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.image-container {
+    flex: 1;
+    position: relative;
+}
+
+.image-editing{
+    opacity : 1;
+
+}
+
+.image-editing:hover {
+    opacity: 0.5; /* Adjust opacity when in edit mode */
+}
+
+
+/* Alter buttons (like, edit, delete) */
+.alter {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.image-editing {
+    opacity: 0.5; /* Optional: Make the image semi-transparent when editing */
+}
+
+.image-input {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10; /* Ensures it appears on top of the image */
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 12px; /* Remove additional padding */
+    margin: 12px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center content inside the button */
+}
+
+.image-container input[type="file"] {
+    width: 72px; /* Match the dimensions for consistency */
+    height: 72px;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.image-container input[type="file"]:hover{
+    opacity: 0.9;
+}
+
+/* Button styles */
+button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+button.like svg {
+    fill: none;
+    stroke: red;
+}
+
+button.like.active svg {
+    fill: red;
+    stroke: none;
+}
+
+button.edit svg {
+    fill: none;
+    stroke: #007BFF;
+}
+
+button.delete svg {
+    fill: none;
+    stroke: black;
+}
+
+/* Subtopics and checklist */
+.subtopics {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.checklist {
+    list-style-type: none;
+    padding: 0;
+}
+
+.subtopic {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background-color: #3e3e3e;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.subtopic span {
+    color: #b0b0b0;
+}
+
+.subtopic:hover {
+    background-color: #5e5e5e;
+}
+
+.subtopic input {
+    cursor: pointer;
+}
+
+.subtopic svg {
+    fill: none;
+    stroke: #007BFF;
+    width: 18px;
+    height: 18px;
+    transition: transform 0.2s ease;
+}
+
+/* Hover effect for subtopic icons */
+.subtopic:hover svg {
+    transform: scale(1.1);
+}
+
+/* Notes section */
+.notes {
+    margin-top: 12px;
+}
+
+.upload-another {
+    margin-top: 10px;
+    background-color: #007BFF;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.upload-another:hover {
+    background-color: #0056b3;
+}
+
+/* Vertical line separator */
+.vertical-line {
+    border-left: 2px solid #d3d3d3;
+    height: 100%;
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+@font-face {
+    font-family: 'magic';
+    src: url(../fonts/ShiftyNotesRegular-BWZ6d.ttf);
+}
+
+.additional-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    background-color: #3e3e3e;
+    padding: 12px;
+    border-radius: 8px;
+    width: 90%;
+    margin: 12px;
+    gap: 12px;
+    margin-top: 12px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.additional-details .date {
+    color: #b0b0b0;
+    font-size: 0.9rem;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.additional-details label b {
+    color: #b0b0b0;
+    font-size: 1.2rem;
+    font-family: 'magic';
+    letter-spacing: 4.8px;
+}
+
+input {
+    height: 12px;
+    padding: 8px;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    background-color: #e6e6e6;
+    color: #757575;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color: #3b3b3b;
+    box-shadow: 0 0 5px rgba(88, 88, 88, 0.5);
+}
+
+input[type="file"] {
+    cursor: pointer;
+    width: 120px;
+    height: 200px;
+    border-radius: 6.4px;
+    background-color: #777777;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 2rem;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+    display: none; /* Hide the default file upload button */
+}
+
+
+input[type="file"] {
+    cursor: pointer;
+    width: 120px;
+    height: 200px;
+    border-radius: 6.4px;
+    background-color: #777777;
+    color: transparent;
+    font-size: 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+    display: none;
+}
+
+input[type="file"]::file-selector-button {
+    display: none;
+}
+
+input[type="file"]::before {
+    content: "+";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 3rem;
+}
+
+input[type="file"]:hover {
+    background-color: #606060;
+}
+
+/* This will apply the "+" content for the custom file input */
+input[type="file"]:before {
+    content: "+";
+    font-size: 3rem;
+    color: white;
+}
+
+input[type="file"]:hover {
+    background-color: #606060;
+}
+
+input[type="file"]::-webkit-inner-spin-button {
+    display: none;
+}
+
+
+input[type="checkbox"] {    
+    cursor: pointer;
+}
+
+/* Base Responsive Adjustments */
+@media screen and (max-width: 1200px) {
+    .card {
+        flex-direction: column;
+        width: 90%;
+        font-size: 1rem; /* Adjust overall font size */
+    }
+    .details {
+        font-size: 1rem;
+        gap: 8px;
+    }
+    .buttons {
+        gap: 16px;
+        font-size: 0.9rem; /* Scale button text size */
+    }
+    #logo {
+        width: 60px; /* Reduce logo size */
+    }
+    
+    input {
+        width: 100%;
+        font-size: 0.9rem;
+    }
+}
+
+/* Smaller Screens (Tablets) */
+@media screen and (max-width: 768px) {
+    .card {
+        flex-direction: column;
+        width: 95%;
+        font-size: 0.9rem;
+    }
+    .defaulr-card .details {
+        width: 100%;
+        font-size: 0.9rem;
+    }
+    .buttons {
+        flex-direction: column;
+        gap: 12px;
+        font-size: 0.8rem; /* Further reduce button text size */
+    }
+    #logo {
+        width: 50px; /* Shrink logo */
+    }
+    button svg{
+        width: 16px; /* Reduce button font size */
+        height: 16px;
+    }
+    .image-container {
+        width: 70px;
+        height: auto;
+    }
+    input {
+        font-size: 0.8rem;
+    }
+    .subtopic {
+        padding: 8px;
+        font-size: 0.8rem;
+    }
+}
+
+/* Small Devices (Phones) */
+@media screen and (max-width: 576px) {
+    .card {
+        flex-direction: column;
+        padding: 8px;
+        font-size: 0.8rem;
+    }
+    .defaulr-card .details label{
+        font-size: 0.9rem;
+    }
+    .buttons {
+        flex-direction: column;
+        gap: 8px;
+        font-size: 0.7rem; /* Scale down button size */
+    }
+    #logo {
+        width: 40px; /* Further shrink logo */
+    }
+    button {
+        font-size: 0.7rem;
+    }
+    .image-container {
+        width: 60px;
+        height: auto;
+    }
+    input {
+        font-size: 0.7rem;
+    }
+    .subtopic {
+        font-size: 0.7rem;
+        padding: 6px;
+    }
+}
+
+/* Extra Small Devices */
+@media screen and (max-width: 400px) {
+    .card {
+        font-size: 0.7rem;
+    }
+    .details {
+        font-size: 0.7rem;
+        gap: 4px;
+    }
+    .buttons {
+        flex-direction: column;
+        gap: 4px;
+        font-size: 0.6rem; /* Minimum button size */
+    }
+    #logo {
+        width: 30px; /* Minimum logo size */
+    }
+    button {
+        font-size: 0.6rem;
+    }
+    .image-container {
+        width: 50px;
+        height: auto;
+    }
+    input {
+        font-size: 0.6rem;
+    }
+    .subtopic {
+        font-size: 0.6rem;
+    }
+}
+
